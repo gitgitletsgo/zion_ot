@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시온찬양대 신입 단원 매뉴얼</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary-dark: #3E2723;
+      --primary-brown: #5D4037;
+      --primary-light: #8D6E63;
+      --accent: #D97706;
+      --accent-light: #FDE68A;
+      --bg-color: #FFFBF0;
+      --card-bg: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: 'Noto Sans KR', sans-serif; 
+      background-color: #f5f1e7;
+      color: var(--primary-dark);
+      overflow: hidden; /* Prevent scrolling, act like a presentation */
+      word-break: keep-all; /* 단어 단위 줄바꿈 설정 */
+      overflow-wrap: break-word;
+    }
+
+    #app-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Slides Area */
+    .slider-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+    }
+
+    /* Card Style for content slides */
+    .slide-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(62, 39, 35, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Typography & Icons */
+    .title-slide {
+      background: var(--primary-dark);
+      color: var(--bg-color);
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      justify-content: center;
+    }
+    
+    .title-slide h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--bg-color);
+    }
+
+    .title-slide .subtitle {
+      color: var(--accent-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .step-badge {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.5rem 1.5rem;
+      border-radius: 99px;
+      font-weight: 900;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .slide h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      color: var(--primary-dark);
+    }
+
+    .slide p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: var(--primary-brown);
+      margin-bottom: 1rem;
+      word-break: keep-all;
+    }
+    
+    .highlight {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .icon-container {
+      width: 120px;
+      height: 120px;
+      background: var(--bg-color);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      border: 4px solid var(--accent-light);
+    }
+
+    .icon-container i {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    /* Prominent Link Button */
+    .btn-link {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn-link:hover {
+      background: #b45309;
+      transform: translateY(-2px);
+    }
+
+    /* Navigation Bar */
+    .navigation {
+      height: 80px;
+      background: var(--card-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background: var(--bg-color);
+      color: var(--primary-dark);
+      border: 2px solid var(--primary-light);
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-light);
+      color: #fff;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      border-color: #ccc;
+    }
+
+    .progress {
+      font-weight: 700;
+      color: var(--primary-brown);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .title-slide h1 { font-size: 2.6rem; line-height: 1.3; }
+      .title-slide .subtitle { font-size: 1.3rem; }
+      .slide h2 { font-size: 2.2rem; margin-bottom: 1.2rem; }
+      .slide p { font-size: 1.4rem; line-height: 1.5; margin-bottom: 1.2rem; }
+      .step-badge { font-size: 1.2rem; padding: 0.5rem 1.2rem; margin-bottom: 1rem; }
+      .slide-card { padding: 2rem 1.2rem; width: 92%; }
+      .navigation { padding: 0 0.5rem; }
+      .nav-btn { font-size: 1.1rem; padding: 0.6rem 1rem; }
+      .btn-link { font-size: 1.2rem; padding: 1rem; width: 100%; text-align: center; }
+      .icon-container { width: 90px; height: 90px; margin-bottom: 1.5rem; }
+      .icon-container i { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app-container">
+    
+    <div class="slider-container">
+      
+      <!-- Slide 1: Title -->
+      <div class="slide title-slide active">
+        <p class="subtitle">파트장님들을 위한 신입 단원 매뉴얼</p>
+        <h1>시온찬양대<br>오리엔테이션</h1>
+        <p style="color: var(--bg-color); opacity: 0.9; margin-top: 1rem;">
+          새로운 단원이 잘 적응할 수 있도록<br>따뜻한 안내를 부탁드립니다 🤎
+        </p>
+      </div>
+
+      <!-- Slide 2: Step 0 -->
+      <div class="slide">
+        <div class="slide-card">
+          <div class="step-badge">STEP 0</div>
+          <div class="icon-container">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <h2>입단서 작성</h2>
+          <p>
+            입단서는 <span class="highlight">총무</span>가 준비 후 파트장 및 서기에게 개별 전달해 드립니다.
+          </p>
+          <p>
+            신입 단원이 양식에 맞게 잘 작성할 수 있도록 꼼꼼히 안내해 주세요. (제공된 종이 신청서 양식 활용)
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 3: Step 1 -->
+      <div class="slide">
+        <div class="slide-card">
+          <div class="step-badge">STEP 1</div>
+          <div class="icon-container">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h2>카톡방 초대</h2>
+          <p>
+            신입 단원을 파트 단톡방과 찬양대 전체 단톡방에 초대해 주세요.
+          </p>
+          <p>
+            기존 단원들과 함께 따뜻하게 환영 인사를 나누며 어색함을 풀어주세요!
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 4: Step 2 -->
+      <div class="slide">
+        <div class="slide-card">
+          <div class="step-badge">STEP 2</div>
+          <div class="icon-container">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          <h2>가운 관리</h2>
+          <p>
+            찬양대 가운 지급은 반드시 <span class="highlight">가운부장님</span>께 사전 확인을 받아야 합니다.
+          </p>
+          <p>
+            확인 후 규정에 맞게 신입 단원에게 가운을 배분하고 관리 방법을 안내해 주세요.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 5: Step 3 -->
+      <div class="slide">
+        <div class="slide-card">
+          <div class="step-badge">STEP 3</div>
+          <div class="icon-container">
+            <i class="fa-solid fa-folder-open"></i>
+          </div>
+          <h2>악보 라벨 배정</h2>
+          <p>
+            새 단원을 위한 파트 악보와 이름이 적힌 악보 라벨은 <span class="highlight">미디어/악보 부장님</span>께 확인하여 배정해 주세요.
+          </p>
+          <p>
+            악보 파일 정리 및 보관 위치도 함께 알려주시면 좋습니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 6: Step 4 -->
+      <div class="slide">
+        <div class="slide-card">
+          <div class="step-badge">STEP 4</div>
+          <div class="icon-container">
+            <i class="fa-solid fa-headphones"></i>
+          </div>
+          <h2>연습 사이트 안내</h2>
+          <p>
+            신입 단원이 주중에도 각자 파트 연습을 할 수 있도록 연습 사이트 접속 및 사용법을 안내해 주세요.
+          </p>
+          <a href="https://zion1.tistory.com" target="_blank" class="btn-link">
+            <i class="fa-solid fa-link" style="margin-right: 8px;"></i>시온찬양대 연습 사이트 바로가기
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="navigation">
+      <button id="prevBtn" class="nav-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left" style="margin-right: 5px;"></i> 이전</button>
+      <div class="progress" id="progressIndicator">1 / 6</div>
+      <button id="nextBtn" class="nav-btn" onclick="nextSlide()">다음 <i class="fa-solid fa-chevron-right" style="margin-left: 5px;"></i></button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const progressIndicator = document.getElementById('progressIndicator');
+    const totalSlides = slides.length;
+
+    function updateSlider() {
+      // Update slides visibility
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      
+      // Update buttons state
+      prevBtn.disabled = (currentSlide === 0);
+      
+      // Change next button text on the last slide if desired, or just disable it
+      if (currentSlide === totalSlides - 1) {
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.disabled = false;
+      }
+      
+      // Update progress text
+      progressIndicator.innerText = `${currentSlide + 1} / ${totalSlides}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlider();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlider();
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    // Initialize
+    updateSlider();
+  </script>
+</body>
+</html>
