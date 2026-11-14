@@ -30,18 +30,18 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{background:var(--bg);color:var(--ink);overflow:hidden;word-break:keep-all;overflow-wrap:break-word;
   font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;-webkit-tap-highlight-color:transparent}
 button,a{font:inherit}
-.app{height:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;padding:12px 16px 14px}
+.app{height:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;padding:12px 14px 14px}
 .top{display:flex;justify-content:space-between;align-items:center;padding:4px 2px 10px}
-.brand{font-weight:900;font-size:14px;letter-spacing:-.02em;display:flex;align-items:center;gap:6px}
+.brand{font-weight:900;font-size:17px;letter-spacing:-.02em;display:flex;align-items:center;gap:6px}
 .brand i{font-style:normal;color:var(--gold);display:inline-block;animation:sway 3s ease-in-out infinite}
-.counter{font-size:13px;font-weight:800;color:var(--ink2);font-variant-numeric:tabular-nums}
+.counter{font-size:16px;font-weight:800;color:var(--ink2);font-variant-numeric:tabular-nums}
 .bars{display:flex;gap:5px;margin-bottom:14px}
 .bars b{flex:1;height:4px;border-radius:9px;background:var(--track);overflow:hidden;position:relative;cursor:pointer}
 .bars b::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.3,.9,.3,1)}
 .bars b.done::after{transform:scaleX(1)}
 .stage{flex:1;position:relative;min-height:0;perspective:1200px;touch-action:pan-y}
 .slide{position:absolute;inset:0;background:var(--card);border-radius:28px;box-shadow:0 18px 44px rgba(53,37,31,.12);
-  display:flex;flex-direction:column;align-items:center;justify-content:safe center;text-align:center;padding:22px 24px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;
+  display:flex;flex-direction:column;align-items:center;justify-content:safe center;text-align:center;padding:20px 16px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;
   opacity:0;visibility:hidden;pointer-events:none;transform:translateX(60px) scale(.94) rotate(2deg);
   transition:transform .55s cubic-bezier(.2,.9,.25,1),opacity .4s ease,visibility 0s .55s}
 .slide.before{transform:translateX(-60px) scale(.94) rotate(-2deg)}
@@ -60,44 +60,44 @@ button,a{font:inherit}
 .cover{overflow:hidden!important;background:radial-gradient(circle at 88% 10%,rgba(226,184,123,.28),transparent 34%),linear-gradient(155deg,#35251f,#64473a);color:#fff6ea}
 .note{position:absolute;bottom:-30px;color:rgba(240,213,172,.55);animation:float linear infinite;pointer-events:none}
 @keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:1}100%{transform:translateY(-640px) rotate(40deg);opacity:0}}
-.mark{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:36px;color:#f0d5ac;border:1px solid rgba(242,219,186,.55);position:relative;margin-bottom:26px}
+.mark{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;font-size:42px;color:#f0d5ac;border:1px solid rgba(242,219,186,.55);position:relative;margin-bottom:26px}
 .mark::before,.mark::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(242,219,186,.5);animation:ring 2.6s ease-out infinite}
 .mark::after{animation-delay:1.3s}
 .mark span{animation:bob 2.4s ease-in-out infinite}
-.kicker{margin:0 0 12px;color:#e9c99e;font-size:14px;font-weight:800;letter-spacing:.08em}
-h1{margin:0;font-size:clamp(28px,8.4vw,38px);line-height:1.38;letter-spacing:-.055em;font-weight:900;
+.kicker{margin:0 0 14px;color:#e9c99e;font-size:18px;font-weight:800;letter-spacing:.08em}
+h1{margin:0;font-size:clamp(33px,9.6vw,46px);line-height:1.38;letter-spacing:-.055em;font-weight:900;
   background:linear-gradient(100deg,#fff6ea 30%,#f3cf94 50%,#fff6ea 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
-.lead{margin:18px 0 0;font-size:14.5px;line-height:1.9;color:#f0e5d9}
-.pill{margin-top:24px;padding:9px 15px;border:1px solid rgba(255,255,255,.28);border-radius:99px;font-size:12.5px;font-weight:700;color:#f4dfc0}
+.lead{margin:22px 0 0;font-size:clamp(15px,4.5vw,19px);line-height:1.75;color:#f0e5d9}
+.pill{margin-top:28px;padding:11px 16px;border:1px solid rgba(255,255,255,.28);border-radius:99px;font-size:14.5px;font-weight:700;color:#f4dfc0}
 
 /* step cards */
-.badge{padding:7px 16px;border-radius:99px;background:var(--pale);color:var(--gold-d);font-size:13px;font-weight:900;letter-spacing:.08em;margin-bottom:20px}
-.icon{width:108px;height:108px;border-radius:50%;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;font-size:50px;margin-bottom:20px;position:relative}
+.badge{padding:8px 18px;border-radius:99px;background:var(--pale);color:var(--gold-d);font-size:16px;font-weight:900;letter-spacing:.08em;margin-bottom:22px}
+.icon{width:124px;height:124px;border-radius:50%;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;font-size:58px;margin-bottom:22px;position:relative}
 .icon::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);opacity:0;animation:ring 2.8s ease-out infinite}
 .icon span{display:block;animation:pop .8s .25s cubic-bezier(.3,1.4,.5,1) both,bob 3s 1.1s ease-in-out infinite}
-h2{margin:0;font-size:clamp(25px,7.2vw,31px);line-height:1.35;font-weight:900;letter-spacing:-.05em}
-.rule{width:34px;height:3px;border-radius:5px;background:var(--gold);margin:16px 0}
-.desc{margin:0;max-width:360px;color:var(--ink2);font-size:clamp(15.5px,4.2vw,17.5px);line-height:1.8;font-weight:500}
-.desc p{margin:0 0 12px}.desc p:last-child{margin:0}.l{display:block;white-space:nowrap}@media (max-width:350px){.l{font-size:14px}}
+h2{margin:0;font-size:clamp(30px,8.8vw,40px);line-height:1.35;font-weight:900;letter-spacing:-.05em}
+.rule{width:44px;height:4px;border-radius:5px;background:var(--gold);margin:20px 0}
+.desc{margin:0;max-width:none;color:var(--ink2);font-size:clamp(17px,5.1vw,23px);line-height:1.75;font-weight:500}
+.desc p{margin:0 0 12px}.desc p:last-child{margin:0}.l{display:block;white-space:nowrap}@media (max-width:350px){.l{font-size:16px}}
 .em{color:var(--gold-d);font-weight:900;background:linear-gradient(transparent 62%,rgba(197,141,75,.25) 0)}
 .flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:20px}
-.chip{padding:8px 13px;border-radius:12px;background:var(--soft);border:1px solid var(--line);font-size:13px;font-weight:800}
+.chip{padding:10px 14px;border-radius:13px;background:var(--soft);border:1px solid var(--line);font-size:15.5px;font-weight:800}
 .chip.hi{background:var(--ink);color:var(--card);border-color:var(--ink)}
 .arr{color:var(--gold);font-weight:900;animation:nudge 1.2s ease-in-out infinite}
-.link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:14px 20px;border-radius:14px;background:var(--gold);color:#fff;text-decoration:none;font-weight:800;font-size:15px;
+.link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:18px 24px;border-radius:16px;background:#a5651f;color:#fff;text-decoration:none;font-weight:800;font-size:18px;
   box-shadow:0 8px 20px rgba(197,141,75,.4);position:relative;overflow:hidden}
 .link::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:glint 2.8s 1s infinite}
 @keyframes glint{to{left:130%}}
 .link:active{transform:scale(.97)}
 
 /* checklist */
-.checks{width:100%;max-width:340px;margin-top:16px;display:grid;gap:8px;text-align:left}
-.ck{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;background:var(--soft);border:1px solid var(--line);font-weight:700;font-size:15px;cursor:pointer;color:var(--ink);transition:background .25s,transform .15s}
+.checks{width:100%;max-width:100%;margin-top:16px;display:grid;gap:8px;text-align:left}
+.ck{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:var(--soft);border:1px solid var(--line);font-weight:700;font-size:18px;cursor:pointer;color:var(--ink);transition:background .25s,transform .15s}
 .ck:active{transform:scale(.98)}
-.box{width:24px;height:24px;border-radius:8px;border:2px solid var(--gold);display:grid;place-items:center;color:transparent;font-size:14px;flex:none;transition:.25s}
+.box{width:28px;height:28px;border-radius:8px;border:2px solid var(--gold);display:grid;place-items:center;color:transparent;font-size:17px;flex:none;transition:.25s}
 .ck.on{background:var(--pale)}.ck.on .box{background:var(--gold);color:#fff;animation:pop .45s both}
 .ck.on .t{text-decoration:line-through;opacity:.6}
-.done-msg{height:22px;margin-top:12px;font-weight:900;color:var(--gold-d);font-size:15px;opacity:0;transition:opacity .4s}
+.done-msg{height:26px;margin-top:12px;font-weight:900;color:var(--gold-d);font-size:17px;opacity:0;transition:opacity .4s}
 .done-msg.show{opacity:1}
 .conf{position:absolute;top:50%;left:50%;width:9px;height:14px;border-radius:2px;pointer-events:none;animation:burst 1.4s cubic-bezier(.1,.7,.3,1) forwards}
 @keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
@@ -105,12 +105,12 @@ h2{margin:0;font-size:clamp(25px,7.2vw,31px);line-height:1.35;font-weight:900;le
 /* bottom */
 .bottom{padding-top:14px}
 .controls{display:flex;gap:10px}
-.nav{min-height:50px;border-radius:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:800;font-size:15px;cursor:pointer;transition:transform .15s,opacity .2s}
-.nav.prev{flex:0 0 96px}.nav.next{flex:1;background:var(--ink);color:var(--card);border-color:var(--ink)}
+.nav{min-height:58px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:800;font-size:18px;cursor:pointer;transition:transform .15s,opacity .2s}
+.nav.prev{flex:0 0 110px}.nav.next{flex:1;background:var(--ink);color:var(--card);border-color:var(--ink)}
 .nav:active{transform:scale(.96)}.nav:disabled{opacity:.3}
-.hint{margin:9px 0 0;text-align:center;font-size:11px;color:var(--ink2);opacity:.8}
+.hint{margin:10px 0 0;text-align:center;font-size:13px;color:var(--ink2);opacity:.8}
 button:focus-visible,a:focus-visible{outline:3px solid #d6a65f;outline-offset:3px}
-@media (max-height:760px){.app{padding:8px 14px 10px}.top{padding:2px 2px 6px}.bars{margin-bottom:8px}.slide{padding:14px 18px;border-radius:24px}.mark{width:60px;height:60px;font-size:26px;margin-bottom:14px}h1{font-size:clamp(24px,7vw,30px);line-height:1.3}.lead{margin-top:10px;font-size:13px;line-height:1.7}.pill{margin-top:14px;padding:7px 12px;font-size:12px}.kicker{margin-bottom:8px;font-size:13px}.icon{width:76px;height:76px;font-size:36px;margin-bottom:12px}.badge{margin-bottom:12px;padding:5px 13px;font-size:12px}.rule{margin:10px 0}.desc{font-size:15px;line-height:1.65}.flow{margin-top:12px}.chip{padding:6px 10px;font-size:12px}.link{margin-top:12px;padding:12px 16px}.checks{margin-top:8px;gap:6px}.ck{padding:8px 12px;font-size:14px}.nav{min-height:44px}.hint{display:none}.bottom{padding-top:8px}}@media (max-height:600px){.mark{width:46px;height:46px;font-size:20px;margin-bottom:8px}.mark::before,.mark::after{display:none}h1{font-size:23px}.lead{font-size:12.5px;line-height:1.6;margin-top:8px}.pill{display:none}.icon{width:58px;height:58px;font-size:28px;margin-bottom:8px}h2{font-size:21px}.desc{font-size:14px}.desc p{margin-bottom:6px}.flow{gap:5px;margin-top:8px}#finish .desc{display:none}#finish .rule{margin:6px 0}.done-msg{margin-top:6px;height:18px;font-size:13px}.ck{padding:6px 12px}}
+@media (max-height:780px){.app{padding:8px 12px 10px}.top{padding:2px 2px 6px}.bars{margin-bottom:8px}.slide{padding:14px 14px;border-radius:24px}.mark{width:68px;height:68px;font-size:30px;margin-bottom:14px}h1{font-size:clamp(29px,8.2vw,38px);line-height:1.3}.lead{margin-top:12px;font-size:clamp(15px,4.3vw,18px);line-height:1.65}.pill{margin-top:16px;padding:8px 14px;font-size:13.5px}.kicker{margin-bottom:8px;font-size:15px}.icon{width:84px;height:84px;font-size:40px;margin-bottom:12px}.badge{margin-bottom:12px;padding:6px 15px;font-size:14px}h2{font-size:clamp(26px,7.6vw,34px)}.rule{margin:12px 0}.desc{font-size:clamp(16.5px,4.8vw,21px);line-height:1.65}.desc p{margin-bottom:8px}.flow{margin-top:12px}.chip{padding:8px 12px;font-size:14.5px}.link{margin-top:14px;padding:14px 18px;font-size:17px}.checks{margin-top:8px;gap:6px}.ck{padding:10px 14px;font-size:17px}.box{width:26px;height:26px}.nav{min-height:50px;font-size:17px}.hint{display:none}.bottom{padding-top:8px}.done-msg{margin-top:8px;height:22px;font-size:15px}}@media (max-height:620px){.mark{width:50px;height:50px;font-size:22px;margin-bottom:8px}.mark::before,.mark::after{display:none}h1{font-size:clamp(25px,7.2vw,32px)}.lead{font-size:14.5px;line-height:1.55;margin-top:8px}.pill{display:none}.icon{width:60px;height:60px;font-size:28px;margin-bottom:8px}.badge{margin-bottom:8px;font-size:13px;padding:4px 12px}h2{font-size:clamp(23px,6.6vw,28px)}.rule{margin:8px 0}.desc{font-size:clamp(16px,4.5vw,19px);line-height:1.55}.desc p{margin-bottom:5px}.flow{gap:5px;margin-top:8px}.chip{padding:6px 10px;font-size:13.5px}.link{padding:11px 16px;margin-top:10px;font-size:16px}#finish .desc{display:none}#finish .rule{margin:6px 0}.done-msg{margin-top:6px;height:18px;font-size:14px}.ck{padding:6px 12px;font-size:16px}.nav{min-height:46px;font-size:16px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.a{opacity:1}}
 </style>
 </head>
@@ -124,7 +124,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #d6a65f;outline-offset:3p
       <div class="mark a" style="--i:0"><span>♫</span></div>
       <p class="kicker a" style="--i:1">시온찬양대</p>
       <h1 class="a" style="--i:2">파트장님을 위한<br>신입 단원 안내<br>매뉴얼</h1>
-      <p class="lead a" style="--i:3">새로 온 단원들이 잘 적응할 수 있도록<br>파트장님이 챙겨주실 5단계를 안내합니다.</p>
+      <p class="lead a" style="--i:3">새로 온 단원들이 잘 적응할 수 있도록<br>파트장님이 챙겨주실<br>5단계를 안내합니다.</p>
       <div class="pill a" style="--i:4">따뜻한 환영이 좋은 시작을 만듭니다 🤎</div>
     </section>
 
@@ -132,7 +132,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #d6a65f;outline-offset:3p
       <div class="badge a" style="--i:0">STEP 1</div>
       <div class="icon a" style="--i:1"><span>📄</span></div>
       <h2 class="a" style="--i:2">입단서 확인</h2><div class="rule a" style="--i:3"></div>
-      <div class="desc a" style="--i:4"><p><span class="l">총무가 신입 단원의 입단서를 준비하여</span><span class="l"><span class="em">파트장 및 서기에게</span></span><span class="l">개별 전달해 드립니다.</span></p><p><span class="l">전달받은 입단서를 확인해 주세요.</span></p></div>
+      <div class="desc a" style="--i:4"><p><span class="l">총무가 신입 단원의</span><span class="l">입단서를 준비하여</span><span class="l"><span class="em">파트장 및 서기에게</span></span><span class="l">개별 전달해 드립니다.</span></p><p><span class="l">전달받은 입단서를 확인해 주세요.</span></p></div>
       <div class="flow a" style="--i:5"><span class="chip">총무</span><span class="arr">→</span><span class="chip hi">파트장 · 서기</span></div>
     </section>
 
@@ -157,14 +157,14 @@ button:focus-visible,a:focus-visible{outline:3px solid #d6a65f;outline-offset:3p
       <div class="icon a" style="--i:1"><span>📚</span></div>
       <h2 class="a" style="--i:2">악보 라벨 배정</h2><div class="rule a" style="--i:3"></div>
       <div class="desc a" style="--i:4"><p><span class="l">신입 단원의 악보와 이름 라벨은</span><span class="l"><span class="em">미디어/악보 부장님께 확인</span>하여</span><span class="l">정확히 배정받을 수 있도록</span><span class="l">챙겨 주세요.</span></p></div>
-      <div class="flow a" style="--i:5"><span class="chip hi">미디어/악보 부장님</span><span class="arr">→</span><span class="chip">악보 · 이름 라벨</span></div>
+      <div class="flow a" style="--i:5"><span class="chip hi">미디어/악보 부장님</span><span class="arr">→</span><span class="chip">악보 · 라벨</span></div>
     </section>
 
     <section class="slide" aria-label="5단계 연습 사이트 공유">
       <div class="badge a" style="--i:0">STEP 5</div>
       <div class="icon a" style="--i:1"><span>🎧</span></div>
       <h2 class="a" style="--i:2">연습 사이트 공유</h2><div class="rule a" style="--i:3"></div>
-      <div class="desc a" style="--i:4"><p><span class="l">스스로 찬양 연습을 할 수 있도록</span><span class="l"><span class="em">연습 사이트 주소</span>를 공유하고</span><span class="l">사용법을 안내해 주세요.</span></p><p><span class="l">아래 버튼을 눌러 바로 열어 보세요.</span></p></div>
+      <div class="desc a" style="--i:4"><p><span class="l">스스로 찬양 연습을 할 수 있도록</span><span class="l"><span class="em">연습 사이트 주소</span>를 공유하고</span><span class="l">사용법을 안내해 주세요.</span></p><p><span class="l">아래 버튼을 눌러 열어 보세요.</span></p></div>
       <a class="link a" style="--i:5" href="https://zion1.tistory.com" target="_blank" rel="noopener noreferrer">연습 사이트 바로가기 <span aria-hidden="true">↗</span></a>
     </section>
 
@@ -180,7 +180,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #d6a65f;outline-offset:3p
         <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box">✓</span><span class="t">악보 라벨 배정</span></div>
         <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box">✓</span><span class="t">연습 사이트 공유</span></div>
       </div>
-      <div class="done-msg" id="doneMsg">모두 완료! 따뜻한 환영 감사합니다 🎉</div>
+      <div class="done-msg" id="doneMsg">모두 완료! 감사합니다 🎉</div>
     </section>
   </main>
 
